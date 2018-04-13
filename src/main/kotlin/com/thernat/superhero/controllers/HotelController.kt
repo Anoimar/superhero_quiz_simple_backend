@@ -6,7 +6,7 @@ import com.thernat.superhero.resource.entity.Hotel
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/hotels")
+@RequestMapping("/")
 class HotelController(val hotelRepository: HotelRepository) {
 
     @GetMapping("/all")
