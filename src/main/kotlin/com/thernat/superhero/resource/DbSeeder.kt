@@ -1,25 +1,24 @@
 package com.thernat.superhero.resource
 
-import com.thernat.superhero.resource.entity.Hotel
+import com.thernat.superhero.resource.entity.Question
 import org.springframework.boot.CommandLineRunner
 import org.springframework.stereotype.Component
 
 @Component
-class DbSeeder(val hotelRepository: HotelRepository) : CommandLineRunner{
+class DbSeeder(val questionRepository: QuestionRepository) : CommandLineRunner{
 
     override fun run(vararg args: String?) {
-        this.hotelRepository.deleteAll()
+        this.questionRepository.deleteAll()
 
-        val moonHostel = Hotel(name = "Moon Hotel Gdańsk",classification = 3,nbRooms = 30)
-        val qubus = Hotel(name = "Qubus Hotel Gdańsk",classification = 5,nbRooms = 90)
-        val hanza = Hotel(name = "Hanza Hotel",classification = 4,nbRooms = 40)
 
-        val hotels = mutableListOf<Hotel>()
-        hotels.add(moonHostel)
-        hotels.add(qubus)
-        hotels.add(hanza)
+        val batman = Question(name = "Batman",alias = "Bruce Wayne")
+        val superman = Question(name = "Superman",alias = "Clark Kent")
+        val cyborg = Question(name = "Cyborg",alias = "Bruce Wayne")
+        val greenLantern = Question(name = "Green Lantern",alias = "Hal Jordan")
+        val heroes = mutableListOf(batman,superman,cyborg,greenLantern)
 
-        hotelRepository.save(hotels)
+
+        questionRepository.save(heroes)
         println("Database has been filled")
     }
 }
