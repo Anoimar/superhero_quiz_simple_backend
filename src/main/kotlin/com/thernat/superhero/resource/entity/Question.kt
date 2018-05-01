@@ -6,9 +6,9 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 
 @Entity
-class Question(val name: String, val alias: String, val gender: String = "male") {
+class Question(val name: String, val alias: String, val gender: String = "male",val imageUrl : String) {
 
-    constructor() :this("","","")
+    constructor() :this("","","","")
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
